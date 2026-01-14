@@ -1,0 +1,18 @@
+# Robots.txt for The Kahani Crew
+# https://thekahanicrew.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thekahanicrew.com/sitemap.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /.git/
+Disallow: /.gemini/
+
+# Allow search engines to crawl all assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
