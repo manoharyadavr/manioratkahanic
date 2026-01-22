@@ -2,8 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
 
-    // Header scroll background change - Removed as per request for persistent style
-    /*
+    // Hero Slideshow
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            // Remove active class from current slide
+            heroSlides[currentSlide].classList.remove('active');
+            // Move to next slide, looping back to 0
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            // Add active class to new slide
+            heroSlides[currentSlide].classList.add('active');
+        }, 3000); // 3 seconds interval
+    }
+
+    // Header scroll background change
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -11,9 +24,91 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
     });
-    */
 
-    // Scroll Reveal Animation
+    // Custom Cursor Logic
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
+    const watermark = document.querySelector('.watermark-text');
+
+    if (cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Cursor Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Cursor Outline follows with slight delay (using animate for smooth trailing)
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Add hover effect to interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .card, .service-item, input, textarea');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+            });
+        });
+
+        portfolioItems.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('portfolio-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('portfolio-hover');
+            });
+        });
+    }
+
+    // Parallax Effects
+    const whyBg = document.querySelector('.why-bg-layer');
+
+    window.addEventListener('scroll', () => {
+        // Watermark Parallax
+        if (watermark) {
+            const speed = watermark.getAttribute('data-parallax');
+            const yPos = (window.scrollY * speed);
+            watermark.style.transform = `translate(-50%, calc(-50% + ${yPos}px))`;
+        }
+
+        // Why Section Parallax
+        if (whyBg) {
+            const section = document.querySelector('.why-immersive');
+            const rect = section.getBoundingClientRect();
+            const scrollPercent = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const move = (scrollPercent * 100) - 50;
+                whyBg.style.transform = `translateY(${move}px)`;
+            }
+        }
+
+        // Portfolio Mosaic Parallax
+        const mosaicItems = document.querySelectorAll('.portfolio-item.item-tall, .portfolio-item.item-large');
+        mosaicItems.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const speed = (index % 2 === 0) ? 20 : -20;
+                const scrollPercent = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                const shift = (scrollPercent * speed) - (speed / 2);
+                const img = item.querySelector('.portfolio-img');
+                if (img) {
+                    img.style.transform = `scale(1.1) translateY(${shift}px)`;
+                }
+            }
+        });
+    });
+
+    // Scroll Reveal Animation (Existing)
     const revealOnScroll = () => {
         const triggerBottom = window.innerHeight * 0.85;
 
@@ -122,67 +217,53 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappURL, '_blank');
         });
     }
-    // Testimonial Carousel
-    const sliderContainer = document.querySelector('.testimonial-container');
-    const displayContainer = document.querySelector('.testimonial-display');
-    const slides = document.querySelectorAll('.testimonial-item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
 
-    if (sliderContainer && slides.length > 0) {
-        let currentIndex = 0;
-        let itemsPerView = window.innerWidth > 1024 ? 2 : 1; // 2 on desktop, 1 on mobile
+    // Cinematic Testimonial Slider
+    const cinSlides = document.querySelectorAll('.cinematic-slide');
+    const cinPrevBtn = document.querySelector('.cin-nav.prev');
+    const cinNextBtn = document.querySelector('.cin-nav.next');
+    const cinCurrentIndex = document.querySelector('.cin-index .current');
+    const cinTotalIndex = document.querySelector('.cin-index .total');
 
-        // Update items per view on resize
-        window.addEventListener('resize', () => {
-            const newItemsPerView = window.innerWidth > 1024 ? 2 : 1;
-            if (newItemsPerView !== itemsPerView) {
-                itemsPerView = newItemsPerView;
-                updateSlider();
-            }
-        });
+    if (cinSlides.length > 0) {
+        let currentCinIdx = 0;
+        cinTotalIndex.textContent = String(cinSlides.length).padStart(2, '0');
 
-        const updateSlider = () => {
-            // Calculate transform value
-            // We want to show 'itemsPerView' items
-            // Each item should take up 100% / itemsPerView percent of the track (minus gaps approx)
-            // Simpler approach: translateX based on index * (100 / itemsPerView)%
+        const updateCinSlider = (newIdx) => {
+            // Remove active from current
+            cinSlides[currentCinIdx].classList.remove('active');
 
-            const percentage = -(currentIndex * (100 / itemsPerView));
-            displayContainer.style.transform = `translateX(${percentage}%)`;
+            // Set new index
+            currentCinIdx = newIdx;
 
-            // Update button states
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= slides.length - itemsPerView;
+            // Add active to new
+            cinSlides[currentCinIdx].classList.add('active');
 
-            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentIndex >= slides.length - itemsPerView ? '0.5' : '1';
+            // Update counter
+            cinCurrentIndex.textContent = String(currentCinIdx + 1).padStart(2, '0');
         };
 
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateSlider();
-                }
+        if (cinPrevBtn && cinNextBtn) {
+            cinPrevBtn.addEventListener('click', () => {
+                let nextIdx = (currentCinIdx - 1 + cinSlides.length) % cinSlides.length;
+                updateCinSlider(nextIdx);
             });
 
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < slides.length - itemsPerView) {
-                    currentIndex++;
-                    updateSlider();
-                }
+            cinNextBtn.addEventListener('click', () => {
+                let nextIdx = (currentCinIdx + 1) % cinSlides.length;
+                updateCinSlider(nextIdx);
             });
-
-            // Initial calculation
-            updateSlider();
         }
     }
+
     // Gallery Modal Logic
     const galleryModal = document.getElementById('gallery-modal');
     const modalClose = document.querySelector('.modal-close');
     const modalTitle = document.getElementById('modal-title');
-    const modalGrid = document.getElementById('modal-grid');
+    const modalMainImg = document.getElementById('modal-main-img');
+    const modalThumbnails = document.getElementById('modal-thumbnails');
+    const modalPrev = document.querySelector('.modal-nav.prev');
+    const modalNext = document.querySelector('.modal-nav.next');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
     // Project Data (Simulated Related Images)
@@ -247,6 +328,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    let currentProjectImages = [];
+    let currentImgIdx = 0;
+
+    const updateGalleryDisplay = (index) => {
+        if (index < 0 || index >= currentProjectImages.length) return;
+
+        currentImgIdx = index;
+
+        // Update main image with fade effect
+        modalMainImg.style.opacity = '0';
+        setTimeout(() => {
+            modalMainImg.src = currentProjectImages[currentImgIdx];
+            modalMainImg.style.opacity = '1';
+        }, 200);
+
+        // Update thumbnails
+        const thumbs = modalThumbnails.querySelectorAll('.thumb-item');
+        thumbs.forEach((thumb, idx) => {
+            if (idx === currentImgIdx) {
+                thumb.classList.add('active');
+                thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                thumb.classList.remove('active');
+            }
+        });
+    };
+
     if (galleryModal && portfolioItems.length > 0) {
         portfolioItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -255,36 +363,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (data) {
                     modalTitle.textContent = data.title;
-                    modalGrid.innerHTML = ''; // Clear previous images
+                    currentProjectImages = data.images;
+                    currentImgIdx = 0;
 
-                    data.images.forEach((imgSrc, index) => {
-                        const imgWrapper = document.createElement('div');
-                        imgWrapper.classList.add('modal-img-wrapper');
-                        imgWrapper.style.animationDelay = `${index * 0.1}s`;
+                    modalThumbnails.innerHTML = '';
+
+                    currentProjectImages.forEach((imgSrc, index) => {
+                        const thumb = document.createElement('div');
+                        thumb.classList.add('thumb-item');
+                        if (index === 0) thumb.classList.add('active');
 
                         const img = document.createElement('img');
                         img.src = imgSrc;
-                        img.alt = `${data.title} Image ${index + 1}`;
-                        img.classList.add('modal-img');
+                        img.alt = `Thumbnail ${index + 1}`;
 
-                        imgWrapper.appendChild(img);
-                        modalGrid.appendChild(imgWrapper);
+                        thumb.appendChild(img);
+                        thumb.addEventListener('click', () => updateGalleryDisplay(index));
+                        modalThumbnails.appendChild(thumb);
                     });
 
+                    updateGalleryDisplay(0);
+
                     galleryModal.style.display = 'block';
-                    // Trigger reflow
                     void galleryModal.offsetWidth;
                     galleryModal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    document.body.style.overflow = 'hidden';
                 }
             });
         });
+
+        // Navigation Arrows
+        if (modalPrev && modalNext) {
+            modalPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIdx = (currentImgIdx - 1 + currentProjectImages.length) % currentProjectImages.length;
+                updateGalleryDisplay(nextIdx);
+            });
+
+            modalNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIdx = (currentImgIdx + 1) % currentProjectImages.length;
+                updateGalleryDisplay(nextIdx);
+            });
+        }
 
         const closeModal = () => {
             galleryModal.classList.remove('active');
             setTimeout(() => {
                 galleryModal.style.display = 'none';
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }, 300);
         };
 
@@ -292,17 +419,21 @@ document.addEventListener('DOMContentLoaded', () => {
             modalClose.addEventListener('click', closeModal);
         }
 
-        // Close on outside click
         window.addEventListener('click', (e) => {
-            if (e.target === galleryModal) {
-                closeModal();
-            }
+            if (e.target === galleryModal) closeModal();
         });
 
-        // Close on Escape key
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
-                closeModal();
+            if (!galleryModal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') {
+                let nextIdx = (currentImgIdx - 1 + currentProjectImages.length) % currentProjectImages.length;
+                updateGalleryDisplay(nextIdx);
+            }
+            if (e.key === 'ArrowRight') {
+                let nextIdx = (currentImgIdx + 1) % currentProjectImages.length;
+                updateGalleryDisplay(nextIdx);
             }
         });
     }

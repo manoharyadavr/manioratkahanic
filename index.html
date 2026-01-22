@@ -166,174 +166,277 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="full-height">
-            <div class="hero-bg">
-                <div class="overlay"></div>
-                <!-- Cinematic image -->
-                <div class="hero-media" style="background-image: url('assets/hero1.jpeg');"></div>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-slideshow">
+                <div class="hero-slide active"><img src="assets/hero1.jpeg" alt="Wedding Hero"></div>
+                <div class="hero-slide"><img src="assets/couple41.jpeg" alt="Decor Setup"></div>
+                <div class="hero-slide"><img src="assets/couple22.jpeg" alt="Couple Moment"></div>
+                <!-- <div class="hero-slide"><img src="assets/charminar1.jpeg" alt="Outdoor Shoot"></div> -->
+                <!-- <div class="hero-slide"><img src="assets/out2.jpeg" alt="Event Ambience"></div> -->
+                <!-- <div class="hero-slide"><img src="assets/hero2.jpeg" alt="Celebration"></div> -->
+                <div class="hero-slide"><img src="assets/couple31.jpeg" alt="Rituals"></div>
             </div>
-            <div class="hero-content container">
-                <h1 class="fade-in">The Kahani Crew</h1>
-                <p class="tagline fade-in">Where every detail tells your story.
-                </p>
-                <div class="hero-ctas fade-in">
-                    <a href="#portfolio" class="btn btn-primary">View Our Work</a>
-                    <a href="#contact" class="btn btn-secondary">Plan Your Wedding</a>
-                </div>
-            </div>
+            <div class="hero-overlay"></div>
+            <!-- Optional overlay if needed for nav visibility, but keeping it clean for now -->
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container grid-2">
-                <div class="about-text scroll-reveal">
-                    <span class="section-subtitle">Our Story</span>
-                    <h2>Authentic Stories, <br>Intimate Celebrations</h2>
-                    <p>The Kahani Crew is an event management company based in Hyderabad, specializing in intimate and
-                        farmhouse weddings. Our philosophy revolves around crafting bespoke experiences that reflect
-                        your unique love story.</p>
-                    <p>We believe that your wedding shouldn't just be an event; it should be a narrative. A "Kahani"
-                        that breathes through every detail, every smile, and every silent look shared between you.</p>
-                </div>
-                <div class="about-image scroll-reveal">
-                    <div class="image-wrapper">
-                        <img src="assets/about.jpeg" alt="Intimate wedding detail" class="reveal-zoom" height="400">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="section alt-bg">
-            <div class="container text-center">
-                <span class="section-subtitle">Our Philosophy</span>
-                <h2>What Makes Us Unique</h2>
-                <div class="grid-4 mt-50">
-                    <div class="card scroll-reveal">
-                        <div class="icon" style="display: flex; justify-content: center;">
-                            <img src="assets/wedding-rings.png" alt="Intimate Weddings Icon" height="54">
-                        </div>
-                        <h3>Intimate Weddings</h3>
-                        <p>We prioritize depth over distance, focusing on small-scale, meaningful gatherings.</p>
-                    </div>
-                    <div class="card scroll-reveal">
-                        <div class="icon" style="display: flex; justify-content: center;">
-                            <img src="assets/farm.png" alt="Farmhouse Icon" height="54">
-                        </div>
-                        <h3>Farmhouse & Resorts</h3>
-                        <p>Specializing in the rustic charm and luxury of Hyderabad's best retreats.</p>
-                    </div>
-                    <div class="card scroll-reveal">
-                        <div class="icon" style="display: flex; justify-content: center;">
-                            <img src="assets/party.png" alt="Modern Minimalist Icon" height="54">
-                        </div>
-                        <h3>Modern Minimalist</h3>
-                        <p>Elegance through simplicity. We believe less is often significantly more.</p>
-                    </div>
-                    <div class="card scroll-reveal">
-                        <div class="icon" style="display: flex; justify-content: center;">
-                            <img src="assets/shutter.png" alt="Storytelling Photography Icon" height="54">
-                        </div>
-                        <h3>Storytelling Photography</h3>
-                        <p>Candid moments captured with an eye for authenticity and emotion.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="section">
-            <div class="container">
-                <div class="text-center mb-60">
-                    <span class="section-subtitle">Our Services</span>
-                    <h2>Comprehensive Wedding Management</h2>
-                </div>
-                <div class="services-grid grid-3 mt-50">
-                    <div class="service-item scroll-reveal">
-                        <h3>Wedding Planning & Coordination</h3>
-                        <p>End-to-end management from concept to execution, ensuring a stress-free journey.</p>
-                    </div>
-                    <div class="service-item scroll-reveal">
-                        <h3>Venue Management</h3>
-                        <p>Exclusive access and seamless coordination with Hyderabad's premium farmhouses and resorts.
-                        </p>
-                    </div>
-                    <div class="service-item scroll-reveal">
-                        <h3>Minimalist Decor & Design</h3>
-                        <p>Sophisticated, modern decor that complements the natural beauty of your chosen venue.</p>
-                    </div>
-                    <div class="service-item scroll-reveal">
-                        <h3>Candid Photography & Film</h3>
-                        <p>Story-driven visuals that capture the raw emotions and authentic moments of your day.</p>
-                    </div>
-                    <div class="service-item scroll-reveal">
-                        <h3>Catering & Menu Design</h3>
-                        <p>Bespoke culinary experiences tailored to your tastes and guest preferences.</p>
-                    </div>
-                    <div class="service-item scroll-reveal">
-                        <h3>Event Styling</h3>
-                        <p>Ensuring a cohesive aesthetic across all pre and post-wedding celebrations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="section alt-bg">
+        <section id="portfolio" class="section">
             <div class="container">
                 <div class="text-center mb-60">
                     <span class="section-subtitle">Portfolio</span>
                     <h2>Our Kahani Gallery</h2>
                 </div>
-                <div class="portfolio-grid mt-50">
-                    <div class="portfolio-item scroll-reveal tall" data-id="orchard">
-                        <div class="portfolio-img" style="background-image: url('assets/charminar1.jpeg');"></div>
+                <div class="portfolio-mosaic mt-50">
+                    <!-- Item 1: Large Featured -->
+                    <div class="portfolio-item scroll-reveal item-large" data-id="orchard">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/charminar1.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Outdoor Clicks</span>
+                            <span class="category">Outdoor Clicks</span>
                             <h4>Opulent Evenings</h4>
+                            <span class="view-project">View Story</span>
                         </div>
                     </div>
-                    <div class="portfolio-item scroll-reveal" data-id="sunset">
-                        <div class="portfolio-img" style="background-image: url('assets/couple22.jpeg');"></div>
+
+                    <!-- Item 2: Vertical Tall -->
+                    <div class="portfolio-item scroll-reveal item-tall" data-id="sunset">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/couple22.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Grand Celebration </span>
+                            <span class="category">Grand Celebration</span>
                             <h4>Golden Hour Tales</h4>
+                            <span class="view-project">View Story</span>
                         </div>
                     </div>
-                    <div class="portfolio-item scroll-reveal tall" data-id="grand">
-                        <div class="portfolio-img" style="background-image: url('assets/set1.jpeg');"></div>
+
+                    <!-- Item 3: Standard -->
+                    <div class="portfolio-item scroll-reveal" data-id="grand">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/set1.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Intimate Wedding</span>
+                            <span class="category">Intimate Wedding</span>
                             <h4>The Heritage Vows</h4>
+                            <span class="view-project">View Story</span>
                         </div>
                     </div>
-                    <div class="portfolio-item scroll-reveal tall" data-id="emotions">
-                        <div class="portfolio-img" style="background-image: url('assets/couple44.jpeg');"></div>
+
+                    <!-- Item 4: Wide -->
+                    <div class="portfolio-item scroll-reveal item-wide" data-id="emotions">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/couple41.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Candid moments</span>
-                            <h4>Pure Emotions</h4>
+                            <span class="category">Candid Emotions</span>
+                            <h4>Pure Soul Moments</h4>
+                            <span class="view-project">View Story</span>
                         </div>
                     </div>
-                    <div class="portfolio-item scroll-reveal" data-id="decor">
-                        <div class="portfolio-img" style="background-image: url('assets/out2.jpeg');"></div>
+
+                    <!-- Item 5: Standard -> Half -->
+                    <div class="portfolio-item scroll-reveal item-half" data-id="decor">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/out2.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Decor Details</span>
+                            <span class="category">Decor Details</span>
                             <h4>Elegant Ambience</h4>
+                            <span class="view-project">View Story</span>
                         </div>
                     </div>
-                    <div class="portfolio-item scroll-reveal" data-id="traditions">
-                        <div class="portfolio-img" style="background-image: url('assets/couple31.jpeg');"></div>
+
+                    <!-- Item 6: Tall -> Half -->
+                    <div class="portfolio-item scroll-reveal item-half" data-id="traditions">
+                        <div class="portfolio-img-container">
+                            <div class="portfolio-img" style="background-image: url('assets/couple31.jpeg');"></div>
+                            <div class="portfolio-overlay"></div>
+                        </div>
                         <div class="portfolio-info">
-                            <span>Culture & Rituals</span>
+                            <span class="category">Culture & Rituals</span>
                             <h4>Timeless Traditions</h4>
+                            <span class="view-project">View Story</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-80 scroll-reveal">
+                    <a href="https://www.instagram.com/thekahanicrew/" target="_blank" class="btn btn-outline">
+                        <span>Explore Full Gallery</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                            stroke-width="1.5"
+                            style="display: inline-block; vertical-align: middle; margin-left: 10px;">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Premium Redesign) -->
+        <section id="about" class="section story-premium alt-bg">
+            <div class="watermark-text" data-parallax="0.2">KAHANI</div>
+            <div class="container relative z-2">
+                <div class="story-grid">
+                    <div class="about-text scroll-reveal">
+                        <span class="section-subtitle">Our Story</span>
+                        <h2>
+                            <span class="word-reveal"><span>Authentic</span></span>
+                            <span class="word-reveal"><span>Stories,</span></span>
+                            <br>
+                            <span class="word-reveal"><span>Intimate</span></span>
+                            <span class="word-reveal"><span>Celebrations</span></span>
+                        </h2>
+                        <p class="mt-30">The Kahani Crew is an event management company based in Hyderabad, specializing
+                            in intimate and
+                            farmhouse weddings. Our philosophy revolves around crafting bespoke experiences that reflect
+                            your unique love story.</p>
+                        <p>We believe that your wedding shouldn't just be an event; it should be a narrative. A "Kahani"
+                            that breathes through every detail, every smile, and every silent look shared between you.
+                        </p>
+                        <div class="signature mt-30">
+                            <span class="est-text">The Kahani</span>
+                        </div>
+                    </div>
+                    <div class="about-image scroll-reveal">
+                        <div class="story-visual-container">
+                            <img src="assets/about.jpeg" alt="Intimate wedding detail" class="story-img" height="500">
+                            <div class="floating-badge">
+                                <svg viewBox="0 0 100 100" width="100" height="100">
+                                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                        fill="transparent" />
+                                    <text fill="#fff" font-size="12" font-family="var(--font-heading)"
+                                        letter-spacing="2">
+                                        <textPath href="#circlePath" startOffset="0%">
+                                            THE KAHANI CREW • EST. 2024 •
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <span class="center-icon">✦</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+
+        <!-- Services Section -->
+        <section id="services" class="section services-premium">
+            <div class="container">
+                <div class="text-center mb-100">
+                    <span class="section-subtitle">Expect Excellence</span>
+                    <h2 class="scroll-reveal">
+                        <span class="word-reveal"><span>Comprehensive</span></span>
+                        <span class="word-reveal"><span>Wedding</span></span>
+                        <span class="word-reveal"><span>Management</span></span>
+                    </h2>
+                </div>
+
+                <div class="premium-services-list">
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">01</span>
+                        <div class="service-info">
+                            <h3>Wedding Planning & Coordination</h3>
+                            <p>End-to-end management from concept to execution, ensuring a stress-free journey.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">02</span>
+                        <div class="service-info">
+                            <h3>Venue Management</h3>
+                            <p>Exclusive access and seamless coordination with Hyderabad's premium farmhouses and
+                                resorts.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">03</span>
+                        <div class="service-info">
+                            <h3>Minimalist Decor & Design</h3>
+                            <p>Sophisticated, modern decor that complements the natural beauty of your chosen venue.
+                            </p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">04</span>
+                        <div class="service-info">
+                            <h3>Candid Photography & Film</h3>
+                            <p>Story-driven visuals that capture the raw emotions and authentic moments of your day.
+                            </p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">05</span>
+                        <div class="service-info">
+                            <h3>Catering & Menu Design</h3>
+                            <p>Bespoke culinary experiences tailored to your tastes and guest preferences.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="premium-service-item scroll-reveal">
+                        <span class="service-number text-serif">06</span>
+                        <div class="service-info">
+                            <h3>Event Styling</h3>
+                            <p>Ensuring a cohesive aesthetic across all pre and post-wedding celebrations.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- Venue Partnerships -->
-        <section id="venues" class="section">
+        <section id="venues" class="section alt-bg">
             <div class="container">
                 <div class="venue-center-text text-center">
                     <span class="section-subtitle">Exclusivity</span>
@@ -378,58 +481,138 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
-        <section id="why-choose" class="section alt-bg">
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section philosophy-premium">
             <div class="container">
-                <div class="grid-2 why-grid">
-                    <div class="why-visual scroll-reveal">
-                        <div class="overlay-visual-container">
-                            <img src="assets/whyus.jpg" alt="Intimate wedding moments" class="overlay-img">
-                            <div class="thread-overlay">
-                                <svg class="kahani-thread" viewBox="0 0 100 800" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M50 0C50 50 20 100 20 150C20 200 80 250 80 300C80 350 30 400 30 450C30 500 70 550 70 600C70 650 40 700 40 750C40 800 50 850 50 900"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        class="thread-path" />
-                                    <!-- Subtle Nodes/Accents -->
-                                    <circle cx="20" cy="150" r="3" fill="currentColor" class="thread-node" />
-                                    <circle cx="80" cy="300" r="3" fill="currentColor" class="thread-node" />
-                                    <circle cx="30" cy="450" r="3" fill="currentColor" class="thread-node" />
-                                    <circle cx="70" cy="600" r="3" fill="currentColor" class="thread-node" />
-                                </svg>
+                <div class="philosophy-split">
+                    <div class="phil-sticky">
+                        <span class="section-subtitle">Our Philosophy</span>
+                        <h2 class="scroll-reveal">
+                            <span class="word-reveal"><span>What</span></span>
+                            <span class="word-reveal"><span>Makes</span></span>
+                            <span class="word-reveal"><span>Us</span></span>
+                            <span class="word-reveal"><span>Unique</span></span>
+                        </h2>
+                        <p class="mt-30" style="max-width: 350px;">At The Kahani Crew, we believe every wedding is a
+                            narrative waiting to be told with elegance and intimacy.</p>
+                    </div>
+
+                    <div class="phil-content">
+                        <div class="phil-item scroll-reveal">
+                            <div class="phil-icon">
+                                <img src="assets/wedding-rings.png" alt="Intimate Weddings" height="64">
+                            </div>
+                            <div class="phil-text">
+                                <h3>Intimate Weddings</h3>
+                                <p>We prioritize depth over distance, focusing on small-scale, meaningful gatherings
+                                    that resonate with authentic emotion and personal connection.</p>
+                            </div>
+                        </div>
+
+                        <div class="phil-item scroll-reveal">
+                            <div class="phil-icon">
+                                <img src="assets/farm.png" alt="Farmhouse & Resorts" height="64">
+                            </div>
+                            <div class="phil-text">
+                                <h3>Farmhouse & Resorts</h3>
+                                <p>Specializing in the rustic charm and luxury of Hyderabad's best retreats, we
+                                    transform open spaces into bespoke cinematic experiences.</p>
+                            </div>
+                        </div>
+
+                        <div class="phil-item scroll-reveal">
+                            <div class="phil-icon">
+                                <img src="assets/party.png" alt="Modern Minimalist" height="64">
+                            </div>
+                            <div class="phil-text">
+                                <h3>Modern Minimalist</h3>
+                                <p>Elegance through simplicity. We believe less is often significantly more,
+                                    focusing on curated details that make a massive visual impact.</p>
+                            </div>
+                        </div>
+
+                        <div class="phil-item scroll-reveal">
+                            <div class="phil-icon">
+                                <img src="assets/shutter.png" alt="Storytelling" height="64">
+                            </div>
+                            <div class="phil-text">
+                                <h3>Storytelling Photography</h3>
+                                <p>Candid moments captured with an eye for authenticity. We don't just take
+                                    pictures; we document the soul of your Kahani.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="why-text scroll-reveal">
-                        <span class="section-subtitle">Expect Excellence</span>
-                        <h2>Why The Kahani Crew?</h2>
-                        <ul class="why-list mt-30">
-                            <li>
-                                <strong>Exclusive Access</strong>
-                                <p>Priority booking at premium intimate venues across Hyderabad.</p>
-                            </li>
-                            <li>
-                                <strong>End-to-End Management</strong>
-                                <p>From the first mood board to the final guest departure, we handle it all.</p>
-                            </li>
-                            <li>
-                                <strong>Personalized Approach</strong>
-                                <p>We take on a limited number of weddings per year to ensure your story gets the
-                                    attention it deserves.</p>
-                            </li>
-                            <li>
-                                <strong>Passionate Experts</strong>
-                                <p>A team of designers and planners who live for the "Kahani" in every wedding.</p>
-                            </li>
-                        </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Why The Kahani Crew (Immersive Redesign) -->
+        <section id="why-choose" class="why-immersive section">
+            <!-- Background Parallax Layer -->
+            <div class="why-bg-layer" style="background-image: url('assets/whyus.jpg');"></div>
+            <div class="why-overlay"></div>
+
+            <div class="container">
+                <div class="why-header text-center mb-80 scroll-reveal">
+                    <span class="section-subtitle white-text">Expect Excellence</span>
+                    <h2 class="white-text">Why The Kahani Crew?</h2>
+                </div>
+
+                <div class="why-cards-grid">
+                    <!-- Glassmorphism Cards with staggered reveal -->
+                    <div class="why-card glass-card scroll-reveal" data-delay="0.1">
+                        <div class="why-card-inner">
+                            <span class="card-num">01</span>
+                            <h3>Exclusive Access</h3>
+                            <p>Priority booking at premium intimate venues and private farmhouses across Hyderabad that
+                                others can't access.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card glass-card scroll-reveal" data-delay="0.2">
+                        <div class="why-card-inner">
+                            <span class="card-num">02</span>
+                            <h3>End-to-End Management</h3>
+                            <p>From initial mood boards to the final guest departure, we handle every logistical detail
+                                with professional precision.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card glass-card scroll-reveal" data-delay="0.3">
+                        <div class="why-card-inner">
+                            <span class="card-num">03</span>
+                            <h3>Personalized Approach</h3>
+                            <p>We take on a limited number of weddings per year to ensure your specific story gets the
+                                obsessive attention it deserves.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card glass-card scroll-reveal" data-delay="0.4">
+                        <div class="why-card-inner">
+                            <span class="card-num">04</span>
+                            <h3>Passionate Experts</h3>
+                            <p>A dedicated team of designers, planners, and visual storytellers who live for the
+                                "Kahani" in every single moment.</p>
+                        </div>
+                    </div>
+
+                    <!-- The Kahani Thread (Winds through the cards) -->
+                    <div class="why-thread-container">
+                        <svg class="kahani-thread-immersive" viewBox="0 0 1000 400" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M-50,200 C150,200 250,50 400,100 C550,150 650,300 800,250 C950,200 1050,200 1100,200"
+                                stroke="currentColor" stroke-width="1" stroke-dasharray="10 10"
+                                class="thread-path-premium" />
+                        </svg>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="section">
+        <section id="testimonials" class="section alt-bg">
             <div class="container">
                 <div class="text-center mb-60">
                     <span class="section-subtitle">Kind Words</span>
@@ -541,7 +724,13 @@
         <!-- Emotional CTA -->
         <section class="section emotional-cta text-center">
             <div class="container scroll-reveal">
-                <h2>Ready to Start Your Kahani?</h2>
+                <h2>
+                    <span class="word-reveal"><span>Ready</span></span>
+                    <span class="word-reveal"><span>to</span></span>
+                    <span class="word-reveal"><span>Start</span></span>
+                    <span class="word-reveal"><span>Your</span></span>
+                    <span class="word-reveal"><span>Kahani?</span></span>
+                </h2>
                 <p>Let's create a celebration that feels effortless, elegant, and uniquely yours.</p>
                 <a href="#contact" class="btn btn-primary mt-30">Let's Create Your Kahani</a>
             </div>
@@ -560,7 +749,7 @@
                         <div class="contact-details mt-50">
                             <div class="detail-item">
                                 <strong>Location</strong>
-                                <p>Jubilee Hills, Hyderabad</p>
+                                <p>Tarnaka, Hyderabad</p>
                             </div>
                             <div class="detail-item">
                                 <strong>Email</strong>
@@ -630,6 +819,14 @@
                 </div>
             </div>
         </section>
+        <!-- Map Section -->
+        <section id="map" class="map-section">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.9203368141621!2d78.5399607!3d17.4249615!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb994454bb1b01%3A0x2e3577c5b99e9afe!2sThe%20Kahani%20Crew!5e0!3m2!1sen!2sin!4v1768994246424!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
     </main>
 
     <footer class="footer section-padding-small">
@@ -732,13 +929,40 @@
     <!-- Gallery Modal -->
     <div id="gallery-modal" class="gallery-modal">
         <span class="modal-close">&times;</span>
-        <div class="modal-content">
-            <h3 id="modal-title">Project Title</h3>
-            <div class="modal-grid" id="modal-grid">
-                <!-- Javascript will populate related images here -->
+        <div class="modal-content-premium">
+            <div class="modal-header">
+                <h3 id="modal-title">Project Title</h3>
+            </div>
+
+            <div class="modal-gallery-main">
+                <button class="modal-nav prev" aria-label="Previous image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="modal-main-viewer">
+                    <img id="modal-main-img" src="" alt="Gallery Main Image">
+                </div>
+
+                <button class="modal-nav next" aria-label="Next image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-thumbnails-container">
+                <div class="modal-thumbnails" id="modal-thumbnails">
+                    <!-- Thumbnails will be injected by JS -->
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
     <script src="js/main.js"></script>
 </body>
