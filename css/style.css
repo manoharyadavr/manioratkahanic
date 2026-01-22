@@ -2558,7 +2558,7 @@ body.portfolio-hover .cursor-dot {
 
 /* Premium Cinematic Testimonials */
 .testimonials-premium {
-    padding: 140px 0;
+    padding: 100px 0;
     overflow: hidden;
     position: relative;
     background-color: var(--color-bg);
@@ -2567,7 +2567,7 @@ body.portfolio-hover .cursor-dot {
 .cinematic-slider-container {
     position: relative;
     max-width: 1000px;
-    margin: 80px auto 0;
+    margin: 50px auto 0;
 }
 
 .cinematic-slides-track {
@@ -2657,14 +2657,19 @@ body.portfolio-hover .cursor-dot {
     border: none;
     color: var(--color-primary);
     cursor: pointer;
-    padding: 10px;
-    transition: all 0.3s ease;
-    opacity: 0.4;
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .cin-nav:hover {
     opacity: 1;
     color: var(--color-accent);
+    background: rgba(107, 112, 92, 0.05);
     transform: scale(1.1);
 }
 
@@ -2711,7 +2716,7 @@ body.portfolio-hover .cursor-dot {
 /* Immersive Why Section */
 .why-immersive {
     position: relative;
-    padding: 160px 0;
+    padding: 120px 0;
     overflow: hidden;
     background-color: #000;
     /* Backdrop for parallax */
