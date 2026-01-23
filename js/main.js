@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSlide = (currentSlide + 1) % heroSlides.length;
             // Add active class to new slide
             heroSlides[currentSlide].classList.add('active');
-        }, 3000); // 3 seconds interval
+        }, 2000); // 3 seconds interval
     }
 
     // Header scroll background change
